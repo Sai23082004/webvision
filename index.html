@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Vision 2025 - CBIT</title>
+    <style>
+        /* CSS Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+                        url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #002147;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 50px;
+        }
+
+        .banner {
+            background: linear-gradient(rgba(0,33,71,0.8), rgba(0,33,71,0.8)),
+                        url('1.jpg');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .event-details {
+            background-color: rgba(255,255,255,0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .register-btn {
+            background-color: #002147;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        footer {
+            background-color: #002147;
+            color: white;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="cbit-logo.png" alt="CBIT Logo" class="logo">
+        <h1>Web Vision 2025</h1>
+        <p>Chaitanya Bharathi Institute of Technology</p>
+    </header>
+
+    <div class="banner">
+        <div class="container">
+            <h2>Showcase Your Web Development Skills</h2>
+            <p>20th February 2025 | Time Limit: 2 Hours</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="event-details">
+            <h2>Event Details</h2>
+            <div class="schedule-grid">
+                <div class="card">
+                    <h3>Registration Dates</h3>
+                    <p>17th - 20th February 2025</p>
+                </div>
+                <div class="card">
+                    <h3>Event Schedule</h3>
+                    <p>Date: 20th February 2025</p>
+                    <p>Time: 10:00 AM - 12:00 PM</p>
+                </div>
+            </div>
+
+            <h2>Rules & Guidelines</h2>
+            <ul>
+                <li>Individual participation only</li>
+                <li>Must use HTML, CSS, and JavaScript</li>
+                <li>No frameworks allowed</li>
+                <li>Judging based on design and functionality</li>
+                <li>Winners will receive certificates</li>
+            </ul>
+
+            <center>
+                <button class="register-btn" onclick="openModal()">Register Now</button>
+            </center>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Organized By</h3>
+                <ul>
+                    <li>Department of CSE</li>
+                    <li>CSE Allied Branches</li>
+                    <li>Department Association</li>
+                    <li>Activities Committee</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Coordinators</h3>
+                <ul>
+                    <li>Faculty Coordinator:<br>Amreen Madam</li>
+                    <li>Student Coordinator:<br>Saikiran (2nd Year CSE)</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Details</h3>
+                <ul>
+                    <li>Email: webvision@cbit.ac.in</li>
+                    <li>Phone: +91 98765 43210</li>
+                    <li>Venue: CBIT Computer Center</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <h2>Registration Form</h2>
+            <form id="registrationForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="file" accept=".zip,.rar" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for modal handling
+        function openModal() {
+            document.getElementById('registerModal').style.display = 'block';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('registerModal')) {
+                document.getElementById('registerModal').style.display = 'none';
+            }
+        }
+
+        // Form submission handling
+        document.getElementById('registrationForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Registration Successful!');
+            document.getElementById('registerModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
