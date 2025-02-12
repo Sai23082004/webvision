@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Vision 2025 - CBIT</title>
+    <style>
+        /* Add this CSS for the new section and modal */
+        .portfolio-section {
+            margin: 2rem 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .portfolio-card {
+            background-color: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: var(--text-light);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Existing header, banner, and event details sections -->
+
+    <main class="container">
+        <!-- Existing event details section -->
+
+        <!-- New Portfolio Section -->
+        <div class="portfolio-section">
+            <h2>Sample Portfolios</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card" onclick="openModal('portfolio1')">
+                    <img src="./1.png" alt="Portfolio 1">
+                    <h3>Portfolio 1</h3>
+                    <p>Minimalist Design</p>
+                </div>
+                <div class="portfolio-card" onclick="openModal('portfolio2')">
+                    <img src="./2.png" alt="Portfolio 2">
+                    <h3>Portfolio 2</h3>
+                    <p>Creative Layout</p>
+                </div>
+                <div class="portfolio-card" onclick="openModal('portfolio3')">
+                    <img src="./3.png" alt="Portfolio 3">
+                    <h3>Portfolio 3</h3>
+                    <p>Interactive Elements</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for displaying portfolios -->
+        <div id="portfolioModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <img id="modalImage" src="" alt="Portfolio">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Existing footer section -->
+
+    <script>
+        // JavaScript to handle modal functionality
+        function openModal(portfolioId) {
+            const modal = document.getElementById('portfolioModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+
+            // Set content based on the portfolio clicked
+            if (portfolioId === 'portfolio1') {
+                modalImage.src = './1.png';
+                modalTitle.textContent = 'Portfolio 1';
+                modalDescription.textContent = 'This is a minimalist design portfolio.';
+            } else if (portfolioId === 'portfolio2') {
+                modalImage.src = './2.png';
+                modalTitle.textContent = 'Portfolio 2';
+                modalDescription.textContent = 'This is a creative layout portfolio.';
+            } else if (portfolioId === 'portfolio3') {
+                modalImage.src = './3.png';
+                modalTitle.textContent = 'Portfolio 3';
+                modalDescription.textContent = 'This is an interactive elements portfolio.';
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('portfolioModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the modal content
+        window.onclick = function(event) {
+            const modal = document.getElementById('portfolioModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
