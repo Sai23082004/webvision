@@ -296,6 +296,95 @@
             font-size: 2rem;
             cursor: pointer;
         }
+
+
+
+    
+  /* Updated Department Section Styles */
+.department-section {
+    margin: 4rem 0;
+    padding: 2rem 0;
+}
+
+.department-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.person-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+}
+
+.person-card img {
+    width: 100%;
+    height: 350px; /* Increased height */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-color);
+}
+
+.person-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.person-card p {
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+@media (min-width: 1200px) {
+    .department-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .department-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .person-card {
+        min-height: auto;
+        padding: 1.5rem;
+    }
+    
+    .person-card img {
+        height: 300px; /* Adjusted mobile height */
+    }
+}
     </style>
 </head>
 <body>
@@ -386,6 +475,69 @@
         </div>
     </main>
 
+
+    <main class="container">
+        <div class="department-section">
+            <h2>Department of CSE</h2>
+            <div class="department-grid">
+                <!-- Chairman -->
+                <div class="person-card">
+                    <img src="./Dr. V. Jayachandra Reddy.webp" alt="Chairman">
+                    <h3>Dr. V . Jayachandra Reddy</h3>
+                    <p>Chairman</p>
+                </div>
+    
+                <!-- Director -->
+                <div class="person-card">
+                    <img src="./Dr. G. Sreenivasula Reddy (2).jpg" alt="Director">
+                    <h3>Dr. G. Sreenivasula Reddy</h3>
+                    <p>Director</p>
+                </div>
+    
+                <!-- Principal -->
+                <div class="person-card">
+                    <img src="./Mrs.S. Sruthi.webp" alt="Principal">
+                    <h3>. Mrs.S. Sruthi</h3>
+                    <p>Principal</p>
+                </div>
+    
+                <!-- HOD CSE -->
+                <div class="person-card">
+                    <img src="./Dr. Y. Dasaratha Rami Reddy.webp" alt="HOD CSE">
+                    <h3>Dr. Y. Dasaratha Rami Reddy</h3>
+                    <p>HOD - CSE</p>
+                </div>
+    
+                <!-- HOD AI -->
+                <div class="person-card">
+                    <img src="./Mr. G. Sreenivasa Reddy.webp" alt="HOD AI">
+                    <h3>Mr. G. Sreenivasa Reddy</h3>
+                    <p>HOD - DS</p>
+                </div>
+    
+                <!-- HOD ML -->
+                <div class="person-card">
+                    <img src="./mr.c.krupa sagar reddy.webp" alt="HOD ML">
+                    <h3>mr.c.krupa sagar reddy</h3>
+                    <p>HOD - AI&ML</p>
+                </div>
+    
+                <!-- HOD DS -->
+                <div class="person-card">
+                    <img src="./mrs.m.lakshmi madhuri.webp" alt="HOD DS">
+                    <h3>mrs.m.lakshmi madhuri</h3>
+                    <p>HOD - AI</p>
+                </div>
+
+                <div class="person-card">
+                    <img src="./Dr. K. Jyothi.webp" alt="HOD ML">
+                    <h3>Dr. K. Jyothi</h3>
+                    <p>HOD - MATHEMATICS</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="footer-content">
